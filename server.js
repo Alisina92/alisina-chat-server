@@ -5,6 +5,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors())
+app.use(express.urlencoded({extended:false}));
 
 const welcomeMessage = {
   id: 0,
@@ -22,9 +23,13 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
+app.post('/messages',function(request,response){
+  request.body=();
+})
+
 app.get('/messages',function(request,response){
-  response.send(JSON.stringify())
-}
+  response.send(JSON.stringify(messages));
+});
 
   
 app.listen(process.env.PORT);
