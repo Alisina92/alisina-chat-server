@@ -1,6 +1,6 @@
-const express = require("express")();
-const http = require('http').server(express);
-const io = require('socket.io')(http);
+const express = require("express");
+
+
 const cors = require('cors');
 const app = express();
 
@@ -22,17 +22,6 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection',function(socket){
- socket.on('chat',function(msg){
-   io.emit('chat',msg);
- });
- });
-io.on('disconnect',function(){
-  console.log("user disconnected");
-});      
+
   
-http.listen(3000,function(){
-     console.log("listening on the localhost3000");
-});
-
-
+app.listen(process.env.PORT);
