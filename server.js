@@ -1,7 +1,7 @@
 const express = require("express")();
 const http = require('http').server(express);
-const io = require('suc')
-const cors = require('cors')
+const io = require('socket.io')(http);
+const cors = require('cors');
 const app = express();
 
 app.use(cors())
@@ -22,8 +22,10 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-
-
+io.on('connection',function(req,res){
+  res.sendFile(__dirname + '/index.html');
+  
+});
 
 
 
