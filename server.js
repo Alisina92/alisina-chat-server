@@ -24,8 +24,10 @@ app.get('/', function(request, response) {
 });
 
 app.post('/messages',function(request,response){
-  request.body=();
-})
+  const message = request.body;
+  message.id = messages.length;
+  messages.push(message);
+  
 
 app.get('/messages',function(request,response){
   response.send(JSON.stringify(messages));
