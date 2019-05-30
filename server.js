@@ -23,7 +23,9 @@ app.get('/', function(request, response) {
 });
 
 io.on('connection',function(socket){
- socket.on('chat')
+ socket.on('chat',function(msg){
+   io.emit
+ }
   
 });
 
