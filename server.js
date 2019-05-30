@@ -25,7 +25,11 @@ app.get('/', function(request, response) {
 
 app.post('/messages',function(request,response){
   const message = request.body;
+  if(message== undefined && null){
+     return res.status(400) 
+  }
   message.id = messages.length;
+  
   messages.push(message);
 });
 
