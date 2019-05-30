@@ -24,11 +24,12 @@ app.get('/', function(request, response) {
 
 io.on('connection',function(socket){
  socket.on('chat',function(msg){
-   io.emit
- }
+   io.emit('chat',msg);
+ });
+ });
+           
   
-});
-
+           
 
 
 app.listen(process.env.PORT);
