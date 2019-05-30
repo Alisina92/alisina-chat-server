@@ -31,7 +31,8 @@ io.on('disconnect',function(){
   console.log("user disconnected");
 });      
   
-           
+http.listen(3000,function(){
+     console.log("listening on the localhost3000");
+});
 
 
-app.listen(process.env.PORT);
