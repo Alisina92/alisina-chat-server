@@ -22,8 +22,8 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection',function(req,res){
-  res.sendFile(__dirname + '/index.html');
+io.on('connection',function(socket){
+ socket.on('chat')
   
 });
 
