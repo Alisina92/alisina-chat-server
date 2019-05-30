@@ -27,7 +27,7 @@ io.on('connection',function(socket){
    io.emit('chat',msg);
  });
  });
-           
+io.         
   
            
 
