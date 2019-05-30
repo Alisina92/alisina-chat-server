@@ -27,11 +27,14 @@ app.post('/messages',function(request,response){
   const message = request.body;
   message.id = messages.length;
   messages.push(message);
-  
+});
 
 app.get('/messages',function(request,response){
   response.send(JSON.stringify(messages));
 });
-
+app.delete('messages/:messagesId',function(request,response){
+     response.delete(messages.prams)
+}
   
+           );
 app.listen(process.env.PORT);
