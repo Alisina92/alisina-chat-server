@@ -16,7 +16,7 @@ const welcomeMessage = {
 //This array is our "data store".
 //We will start with one message in the array.
 //Note: messages will be lost when Glitch restarts our server.
-const messages = [welcomeMessage]
+let messages = [welcomeMessage]
 
 
 app.get('/', function(request, response) {
@@ -34,9 +34,10 @@ app.get('/messages',function(request,response){
 });
 app.delete('/messages/:messageId',function(request,response){
      const messageId = request.params.messageId;
-     messages.filter(message=>{ 
-     return message==messageId;
-})
+     messages = messages.filter(message=>{ 
+     return message.id!= messageId;
+       
+});
 }
   
   
