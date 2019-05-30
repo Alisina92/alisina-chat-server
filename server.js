@@ -25,8 +25,8 @@ app.get('/', function(request, response) {
 
 app.post('/messages',function(request,response){
   const message = request.body;
-  if(message== undefined && null){
-     return res.status(400) 
+  if(message.text ===undefined || message.from === undefined){
+     return response.status(400);
   }
   message.id = messages.length;
   
