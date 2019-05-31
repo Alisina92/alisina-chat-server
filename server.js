@@ -53,8 +53,12 @@ app.get('/messages/search?text=express',function(request,responce){
   }
   });
 app.get('/messages/latest',function(request,responce){
- 
-
+ const message = request.body;
+  if(message.text>10){
+   return messages.filter(message);
+  }else{
+    return messages.push(message);
+  }
 });
 
 app.listen(process.env.PORT);
