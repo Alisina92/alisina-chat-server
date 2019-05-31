@@ -44,8 +44,11 @@ app.delete('/messages/:messageId',function(request,response){
 });
 });
 
-app.get('/messages/search?text=express',function(request,respond){
-     
+app.get('/messages/search?text=express',function(request,responce){
+   const message = request.body;
+  if(message.text === 'express'){
+     return messages.push(message);
+  }  
 });
 
 app.listen(process.env.PORT);
