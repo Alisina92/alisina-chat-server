@@ -42,8 +42,8 @@ app.delete('/messages/:messageId',function(request,response){
      return message.id!= messageId;
        
 });
-}
-app 
-  
-           );
+});
+
+app.get('')
+
 app.listen(process.env.PORT);
