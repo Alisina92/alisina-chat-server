@@ -48,9 +48,10 @@ app.get('/messages/search?text=express',function(request,responce){
    const message = request.body;
   if(message.text === 'express'){
      return messages.push(message);
-  }else if(){
-   return messages.filter()
+  }else if(message.text !='express'){
+   return messages.filter(message);
   }
   });
+
 
 app.listen(process.env.PORT);
