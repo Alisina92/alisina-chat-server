@@ -52,6 +52,6 @@ app.get('/messages/search?text=express',function(request,responce){
    return messages.filter(message);
   }
   });
-app.get()
+app.post('/')
 
 app.listen(process.env.PORT);
