@@ -44,6 +44,8 @@ app.delete('/messages/:messageId',function(request,response){
 });
 });
 
-app.get('')
+app.get('/messages/search?text=express',function(request,respond){
+     
+});
 
 app.listen(process.env.PORT);
