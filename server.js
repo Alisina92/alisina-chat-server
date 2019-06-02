@@ -34,12 +34,12 @@ app.post('/messages',function(request,response){
 
 
 app.put('/messages/:id',function(request,response){
-  const id = request.params.id;
-  id = parseInt(id);
+  const id = parseInt(id);request.params.id;
+  
   //let excistingMessage = messages.find(messages=>{
     //return messages.id == id;
   //});
-response.send(response.status(400));
+response.status(204);
 });
 
 app.get('/messages',function(request,response){
