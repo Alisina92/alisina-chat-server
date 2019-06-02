@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors())
 app.use(express.urlencoded({extended:false}));
-
+app.use(express.json());
 const welcomeMessage = {
   id: 0,
   from: "Bart",
@@ -17,7 +17,6 @@ const welcomeMessage = {
 //We will start with one message in the array.
 //Note: messages will be lost when Glitch restarts our server.
 let messages = [welcomeMessage]
-
 
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/index.html');
@@ -31,6 +30,12 @@ app.post('/messages',function(request,response){
   message.id = messages.length;
   
   messages.push(message);
+});
+
+
+app.put('',function(request,response){
+   
+   const      
 });
 
 app.get('/messages',function(request,response){
