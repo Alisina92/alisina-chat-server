@@ -33,9 +33,11 @@ app.post('/messages',function(request,response){
 });
 
 
-app.put('',function(request,response){
+app.put('/messages/:id',function(request,response){
+  const id = request.params.id;
+  id = parseInt(id);
+   exsistingid = new id 
    
-   const      
 });
 
 app.get('/messages',function(request,response){
