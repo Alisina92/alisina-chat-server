@@ -36,7 +36,9 @@ app.post('/messages',function(request,response){
 app.put('/messages/:id',function(request,response){
   const id = request.params.id;
   id = parseInt(id);
-   exsistingid = new id 
+  let excistingMessage = messages.find(messages=>{
+    return messages.id == id;
+  });
    
 });
 
