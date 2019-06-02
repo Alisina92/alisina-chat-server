@@ -41,7 +41,7 @@ app.put('/messages/:id',function(request,response){
   });
   console.log(id,excistingMessage);
   const newMessage = request.body;
-  
+  excistingMessage.text = newMessage.text;
   response.sendStatus(204);
   
 });
